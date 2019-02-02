@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TODO</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+</head>
+<body style="background-color: antiquewhite">
+<div class="container">
+<h1 style="font-family: 'Indie Flower', cursive;">Hey ! This is you TODO List </h1>
+<ul>
+   {% for todo_item in all_items %}
+    <li>{{ todo_item.content }}
+    <form action="/deleteTodo/{{ todo_item.id }}/"
+          method="post"
+            style="display:inline;">
+
+        {% csrf_token %}
+  <input type="submit" value="Delete" class="btn btn-primary"/><br>
+    </form>
+
+    </li>
+    {% endfor %}
+</ul>
+<form action="/addTodo/" method="post">
+    {% csrf_token %}
+  <input type="text" name="content"/>
+  <input type="submit" value="Add" class="btn btn-success" />
+</form>
+</div>
+</body>
+</html>
