@@ -25,7 +25,7 @@ SECRET_KEY = 'mw92a&7r%$-+gqbd2wwlopv63&!b999gkgsy@wxls(k2&4+*ej'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['aouatefm.pythonanywhere.com']
 
 
 # Application definition
